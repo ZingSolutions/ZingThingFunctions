@@ -28,6 +28,7 @@ namespace ZingThingFunctions
             services.AddLogging(); //TODO: hook up to app insights
             services.AddSingleton<IConfiguration>(configuration);
             services.AddSingleton<IAppSettingsService, ConfigurationAppSettingsService>();
+            services.AddSingleton<ICosmosCollectionUriService, CosmosCollectionUriService>();
             services.AddSingleton<ITwilioValidatorService, TwilioValidatorService>();
             services.AddSingleton<ITwilioRestClient, TwilioRestClientService>();
         }

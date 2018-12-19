@@ -5,31 +5,22 @@ namespace ZingThingFunctions.Models
     public class IncomingMessage
     {
         [JsonProperty("id")]
-        public string CommandSid { get; set; }
+        public string MessageSid { get; set; }
 
-        [JsonProperty("simSid")]
-        public string SimSid { get; set; }
+        [JsonProperty("from")]
+        public string From { get; set; }
 
-        [JsonProperty("simUniqueName")]
-        public string SimUniqueName { get; set; }
+        [JsonProperty("body")]
+        public string Body { get; set; }
+
+        [JsonProperty("to")]
+        public string To { get; set; }
+
+        [JsonProperty("messagingServiceSid")]
+        public string MessagingServiceSid { get; set; }
 
         [JsonProperty("accountSid")]
         public string AccountSid { get; set; }
-
-        [JsonProperty("errorCode")]
-        public string ErrorCode { get; set; }
-
-        [JsonProperty("errorMessage")]
-        public string ErrorMessage { get; set; }
-
-        [JsonProperty("commandStatus")]
-        public string CommandStatus { get; set; }
-
-        [JsonProperty("commandMode")]
-        public string CommandMode { get; set; }
-
-        [JsonProperty("command")]
-        public string Command { get; set; }
 
         [JsonProperty("apiVersion")]
         public string ApiVersion { get; set; }
