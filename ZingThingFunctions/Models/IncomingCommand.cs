@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System;
 
 namespace ZingThingFunctions.Models
 {
@@ -33,5 +34,8 @@ namespace ZingThingFunctions.Models
 
         [JsonProperty("apiVersion")]
         public string ApiVersion { get; set; }
+
+        [JsonProperty("createdAtUtc")]
+        public DateTime CreatedAtUtc { get; set; }
     }
 }

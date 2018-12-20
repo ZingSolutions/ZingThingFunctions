@@ -5,7 +5,6 @@ using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Threading.Tasks;
-using Twilio.Clients;
 using Willezone.Azure.WebJobs.Extensions.DependencyInjection;
 using ZingThingFunctions.Extensions;
 using ZingThingFunctions.Models;
@@ -20,7 +19,6 @@ namespace ZingThingFunctions.Functions
         public static async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = nameof(ReceiveCommand))]HttpRequest req,
             [Inject] ITwilioValidatorService twilioRequestValidator,
-            [Inject] ITwilioRestClient twilioRestClient,
             [CosmosDB(
             databaseName: AppSettings.ZingDatabaseNameEnvVarName,
             collectionName: CollectionNames.IncomingCommands,
@@ -29,8 +27,6 @@ namespace ZingThingFunctions.Functions
         {
             if (!twilioRequestValidator.IsValidRequest(req))
                 return new StatusCodeResult(StatusCodes.Status401Unauthorized);
-
-            log.LogInformation("passed authentication check, is a valid request from twilio process it");
 
             var result = await req.DeserializeFormDataToObjectAsync<IncomingCommand>();
 

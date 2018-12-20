@@ -23,7 +23,6 @@ namespace ZingThingFunctions.Functions
             ILogger log
             )
         {
-
             var result = await req.DeserializeFormDataToObjectAsync<IncomingMessage>();
 
             if (string.IsNullOrWhiteSpace(result.MessageSid))

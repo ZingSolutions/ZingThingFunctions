@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System;
 
 namespace ZingThingFunctions.Models
 {
@@ -9,6 +10,18 @@ namespace ZingThingFunctions.Models
 
         [JsonProperty("from")]
         public string From { get; set; }
+
+        [JsonProperty("fromZip")]
+        public string FromZip { get; set; }
+
+        [JsonProperty("fromCity")]
+        public string FromCity { get; set; }
+
+        [JsonProperty("fromState")]
+        public string FromState { get; set; }
+
+        [JsonProperty("fromCountry")]
+        public string FromCountry { get; set; }
 
         [JsonProperty("body")]
         public string Body { get; set; }
@@ -24,5 +37,8 @@ namespace ZingThingFunctions.Models
 
         [JsonProperty("apiVersion")]
         public string ApiVersion { get; set; }
+
+        [JsonProperty("createdAtUtc")]
+        public DateTime CreatedAtUtc { get; set; }
     }
 }
