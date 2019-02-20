@@ -112,12 +112,12 @@ namespace ZingThingFunctions.Functions
                     case ActivationStatus.Active:
                         if (string.IsNullOrWhiteSpace(sim.UserNumber))
                         {
-                            log.LogError($"can process command: {doc.CommandSid}, matching sim: {sim.SimSid} is Active but UserNumber is missing");
+                            log.LogError($"cant process command: {doc.CommandSid}, matching sim: {sim.SimSid} is Active but UserNumber is missing");
                             continue;
                         }
                         if (string.IsNullOrWhiteSpace(sim.ControlNumber))
                         {
-                            log.LogError($"can process command: {doc.CommandSid}, matching sim: {sim.SimSid} is Active but ControlNumber is missing");
+                            log.LogError($"cant process command: {doc.CommandSid}, matching sim: {sim.SimSid} is Active but ControlNumber is missing");
                             continue;
                         }
                         break; //all good carry on

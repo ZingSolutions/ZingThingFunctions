@@ -34,6 +34,9 @@ namespace ZingThingFunctions.Models
         [JsonProperty("controlNumber")]
         public string ControlNumber { get; set; }
 
+        [JsonProperty("activationCode")]
+        public string ActivationCode { get; set; }
+
         [JsonProperty("status")]
         [JsonConverter(typeof(StringEnumConverter))]
         public ActivationStatus Status { get; set; }
